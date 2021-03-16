@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>문제 4</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		var sum = 0;
+		
+		for(var i = 1; i <= 10; i++) {
+			document.write("i가 " + i + "일 때 > <br>");
+			for(var k = 1; k <= 10; k++) {
+				sum = i + k;
+				
+				if(sum%3 !== 0) {
+					continue;
+				}
+				
+				document.write(i + " + " + k + " = " + sum + "<br>");
+			}
+			document.write("<br>");
+		}
+	
+	</script>
+</body>
+</html>

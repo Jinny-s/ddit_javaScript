@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		p, div {
+			width: 200px;
+			height: 100px;
+		}
+		
+		#ex1 {
+			background-color: #b4eeb4;
+		}
+
+		#ex2 {
+			background-color: #fff68f;
+			position: fixed;
+			left: 30px;
+			top: 30px;
+		}
+
+		#ex3 {
+			background-color: #dbc5fe;
+		}
+		
+		#container {
+			background-color: #d2d2d2;		
+		}
+		
+		img {
+			width: 400px;
+			position: absolute;
+			z-index: -1;
+		}
+		
+		img+p {
+			color: skyblue;
+			font-weight: bold;
+			width: 400px;
+			text-align: center;
+			font-size: 1.5em;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>Position 연습</h1>
+	<p id="ex1">블럭1</p>
+	<div id="container">
+		<div id="ex2">블럭2(position)</div>
+	</div>
+	<p id="ex3">블럭3</p>
+	
+	<hr>
+	<h1>z-index 연습</h1>
+	<img src="../../images/barista.jpeg" >
+	<p>커피 원래 안 마셔요 안 좋아해용</p>
+</body>
+</html>

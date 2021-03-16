@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>연습문제 2(정유진)</title>
+	<style>
+		fieldset {
+			width:650px;
+			line-height:35px;
+			padding-left:20px;
+			}	
+	</style>
+</head>
+<body>
+<h1>회원 가입 화면</h1>
+	<form>
+		<fieldset>
+			<legend>회원 정보</legend>
+			이름<input type="text" name="userName" size="25" maxlength="10" title="이름" value="정유진" style="margin-left:80px">
+			<br>
+			주소<input type="text" name="userAdd" size="25" title="주소" style="margin-left:80px">
+			<br>
+			이메일<input type="email" size="25" name="userEmail" title="이메일주소"style="margin-left:64px">
+			<br>
+			<input type="radio" name="gender" id="genderMale">
+			<label for="genderMale">Male</label>
+			<br>
+			<input type="radio" name="gender" id="genderFemale">
+			<label for="genderFemale">Female</label>
+			<br>
+			<button type="submit">Send</button>
+			<button type="reset">원래대로</button>
+		</fieldset>
+	</form>
+</body>
+</html>

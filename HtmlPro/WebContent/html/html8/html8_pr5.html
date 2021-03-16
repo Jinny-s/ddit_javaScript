@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>연습 5</title>
+	<style type="text/css">
+		textarea {
+			background-color: yellow;
+			border: 1px solid orange;
+		}
+		hr {
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<button type="button" onclick="random()">시작</button>
+	<hr>
+	<h1>출력위치</h1>
+	<textarea id="result" rows="15" cols="20"></textarea>
+	
+	<script type="text/javascript">
+		function random() {
+			var num = 0;
+			var area = document.getElementById("result");
+			for (var i = 0; i < 5; i++) {
+				num = Math.floor(Math.random() * 10);
+				area.innerHTML += num;
+				if(i == 4) continue;
+				area.innerHTML += ", ";
+			}
+			area.innerHTML += "\n";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>연습 1</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var x = parseInt(prompt("첫번째 숫자를 입력하세요"));
+		var op = prompt("연산자를 입력하세요 \n +,-,*,/,% 중 하나");
+		var y = parseInt(prompt("두번째 숫자를 입력하세요"));
+		var result;
+		
+		if(op == "+") {
+			result = x + y;
+		} else if (op == "-") {
+			result = x - y;
+		} else if (op == "*") {
+			result = x * y;
+		} else if (op == "/") {
+			result = x / y;
+		} else if (op == "%") {
+			result = x % y;
+		}
+		document.write(x + op + y + " = " + result);
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<!-- 중복되지 않은 5개의 수를 입력 받아 출력하는 프로그램 -->
+	<script>
+		
+		var repeat = true;
+		var num;
+		var numArray = new Array();
+		
+		for(var i = 0; i < 5; i++) {
+			num = prompt("숫자를 입력해주세요. (중복될 시 저장되지 않음)")
+			
+			if(num == numArray[i]) {
+				continue;
+			}
+			
+			numArray[cnt] = num;
+			cnt++
+		}
+		document.write(numArray);
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		var user1, user2, result;
+		
+		user1 = prompt("첫번째 사람의 가위 바위 보를 입력하세요");
+		user2 = prompt("두번째 사람의 가위 바위 보를 입력하세요");
+		
+		document.write("첫번째 사람 : " + user1
+					+ "<br>두번째 사람 : " + user2
+					+ "<br><br>결 과 : " + match(user1, user2));
+		
+		function match(x, y) {
+			if (x == y) {
+				return "비겼습니다!";
+			}
+			
+			if (x == "바위") {
+				if (y == "가위") return "첫번째 사람 승!!!";
+				else return "두번째 사람 승!!!";
+			}
+			
+			if (x == "가위") {
+				if (y == "보") return "첫번째 사람 승!!!";
+				else return "두번째 사람 승!!!";
+			}
+			
+			if (x == "보") {
+				if (y == "바위") return "첫번째 사람 승!!!";
+				else return "두번째 사람 승!!!";
+			}
+		}
+		
+	</script>
+</body>
+</html>

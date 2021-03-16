@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>연습2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var score, grade; 
+		score = prompt("점수를 입력하세요 (0 ~ 100 사이)");
+		
+		// 방법 1
+		switch(parseInt(score / 10)) {
+		case 10:
+		case 9: grade = "A";
+			break;
+		case 8: grade = "B";
+			break;
+		case 7: grade = "C";
+			break;
+		case 6: grade = "D";
+			break;
+		case 5:
+		case 4:
+		case 3:
+		case 2:
+		case 1:
+		case 0: grade = "F";
+			break;
+		}
+		document.write("당신의 점수는 " + score + "점이며, 학점은 " + grade + "입니다.")
+		
+		// 방법 2
+// 		switch (true) {
+// 		case (90 <= score) : grade = "A";
+// 			break;
+// 		case (80 <= score) : grade = "B";
+// 			break;	
+// 		case (70 <= score) : grade = "C";
+// 			break;
+// 		case (60 <= score) : grade = "D";
+// 			break;
+// 		case (0 <= score) : grade = "F";
+// 			break;
+// 		}
+// 		document.write("당신의 점수는 " + score + "점이며, 학점은 " + grade + "입니다.")
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>객체 생성 방법</title>
+	<script type="text/javascript">
+		
+		// 상수로 객체 생성
+		var myCar = {
+				model : "GV80"
+				, color : "blue"
+				, year : 2002
+				, speed : 30
+				, brake : function() {
+					// 속도 줄이기 (speed)
+					this.speed -= 10;
+				}
+				, accel : function() {
+					// 속도 줄이기 (speed)
+					this.speed += 10;
+				}
+		};
+		
+		document.write(myCar.color + "<br>");
+		document.write("색상변경<br>");
+		myCar.color = "red";
+		document.write(myCar.color + "<br>");
+		
+		
+// 		alert(myCar.color);	
+		
+// 		myCar.color = "red";
+// 		alert(myCar.color);
+		
+// 		alert(myCar.speed);
+// 		myCar.brake();
+// 		alert(myCar.speed);
+		
+		// 생성자로 객체 생성
+		function Car(model, color, speed) {
+			this.model = model;
+			this.color = color;
+			this.speed = speed;
+			
+			this.brake = function() {
+				this.speed -= 10;
+			}
+			this.accel = function() {
+				this.speed += 10;
+			}
+		}
+		
+		var hongCar = new Car("GV70", "red", 20);
+		var leeCar = new Car("G80", "blue", 100);
+		// ....
+		hongCar.color = "white";
+		hongCar.brake();
+		
+		
+		// object를 배열로 변환 - Object.values()
+		var person = {
+			name : "홍길동"
+			,age : 30
+			,city : "대전"
+			,nation : "대한민국"
+			,job: "백수"
+		};
+		var tmp = Object.values(person);
+// 		alert(tmp);
+		document.write(tmp);
+		
+		// object를 문자로 변환
+		document.write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><br>")
+		document.write("Object를 문자로 변환 - JSON.stringify()<br>")
+		document.write(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><br>")
+		tmp = JSON.stringify(person);
+		document.write(tmp);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

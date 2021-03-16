@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>My Blog Page</title>
+	<style type="text/css">
+		
+		body {
+			margin: 0px;
+		}
+		
+		header {
+			background-color: #9fd8df;
+			width: 100%;
+			height: 100px;
+		}
+		
+		h1 {
+			text-align: center;
+			margin: 0px;
+			line-height: 100px;
+		}
+		
+		nav {
+			box-sizing: border-box;
+ 			padding: 20px;
+			float: left;
+			background-color: #f5c0c0;
+			width: 30%;
+			height: calc(100vh - 150px);
+			overflow: auto;
+			}
+			
+		nav img {
+			width: 80%;
+			margin-left: 9%;
+		}
+		
+		figure {
+			margin: 0;
+			line-height: 0;
+		}
+		
+		figcaption {
+			padding: 1em;
+			font-weight: bold;
+			text-align: center;
+		}
+		
+		#content {
+			box-sizing: border-box;
+ 			padding: 20px;
+			float: right;
+			background-color: #f0e4d7;
+			width: 70%;
+			height: calc(100vh - 150px);
+			overflow: auto;
+		}
+		
+		#article1 {
+			padding-bottom: 20px;
+		}
+		
+		footer {
+			clear: both;
+			background-color: #ff7171;
+			height: 50px;
+			color: white;
+			width: 100%;
+			text-align: center;
+		}
+		
+		footer p {
+			text-align: center;
+			line-height: 50px;
+		}
+		
+	</style>
+</head>
+<body>
+	<header>
+		<h1>My Blog Page</h1>
+	</header>
+	
+	
+	<nav>
+		<h2>Links</h2>
+		<ul>
+			<li><a href="https://www.w3schools.com/">W3C</a></li>
+			<li><a href="https://www.mozilla.org">MOZILLA</a></li>
+			<li><a href="https://www.ddit.or.kr/">DDIT</a></li>
+		</ul>
+		<figure>
+			<img alt="peng" src="../../images/peng.jpg">
+			<figcaption>펭하 - !<figcaption>
+		</figure>
+	</nav>
+	
+	<div id="content">
+		<div id="article1">
+			<h3>Semantic Tags</h3>
+			<p>시멘틱 요소(Semantic elements)들은 브라우저에게 요소의 의만 목적을 명확하게 알려주는 요소이다.
+		</div>
+		
+		<div>
+			<h3>div와 span</h3>
+			<p>
+				div는 "divide"의 약자로서 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다.
+				span 요소는 인라인 요소로서 텍스트를 위한 컨테이너로 사용할 수 있다.
+			</p>
+		</div>
+		
+	</div>
+	
+	<footer>
+		<p>Copyright (c) 2021 Jinny</p>
+	</footer>
+</body>
+</html>

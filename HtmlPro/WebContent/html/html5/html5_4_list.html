@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		ul.list {
+			list-style: none;
+			text-align: center;
+			border-top: 1px solid red;
+			border-bottom: 1px solid red;
+			padding: 50px 0px;
+		}
+		
+		ul.list li {
+			display: inline;
+/* 			border: 1px solid; */
+			padding: 0px 10px;
+			margin: 0px 20px;
+			letter-spacing: 10px;
+			text-transform: uppercase;
+		}
+		
+		ul.list li a {
+			text-decoration: none;
+			font-family: serif;
+			color: black;
+		}
+		
+		ul.list li a:hover {
+			text-decoration: underline;
+			color: maroon;
+			font-size: 1.3em;
+			
+			
+		}
+		
+	
+		ul.sample {
+			list-style-image: url("../../images/image.jpg");
+			list-style-type: square;
+			list-style-position: outside;
+		}
+		ul.sample2 {
+			list-style-image: url("../../images/image.jpg");
+			list-style-type: square;
+			list-style-position: inside;
+		}
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li><a href="">Home</a></li>
+		<li><a href="">Blog</a></li>
+		<li><a href="">About</a></li>
+		<li><a href="">Contact</a></li>
+	</ul>
+	<p>리스트 스타일 연습</p>
+	<ul class="sample">
+		<li>아메리카노</li>
+		<li>카푸치노</li>
+		<li>카페라떼</li>
+	</ul>
+	<ul class="sample2">
+		<li>아메리카노</li>
+		<li>카푸치노</li>
+		<li>카페라떼</li>
+	</ul>
+</body>
+</html>

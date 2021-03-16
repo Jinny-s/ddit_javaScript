@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>문제 6</title>
+</head>
+<body>
+	<!-- 두 수를 입력(prompt). 두 수의 합이 100 이상 일 때만
+	출력하시오. continue 이용. 두 수 모두 0이 입력되면 종료 -->
+	<script type="text/javascript">
+		
+		var i, j;
+		var sum = 0;
+		
+		while(i !== 0 && j !== 0) {
+			i = parseInt(prompt("첫번째 정수를 입력하세요\n(합이 100 이상일 경우만 출력, 두 수 모두 0을 입력하면 종료)"))
+			j = parseInt(prompt("두번째 정수를 입력하세요\n(합이 100 이상일 경우만 출력, 두 수 모두 0을 입력하면 종료)"))
+			
+			sum = i + j;
+			
+			if (sum < 100) {
+				continue;
+			}
+			document.write(i + " + " + j + " = " + sum + "<br>");
+		}
+		
+		
+	</script>
+</body>
+</html>
