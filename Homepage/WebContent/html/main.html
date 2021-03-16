@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link type="text/css" rel="stylesheet" href="../css/mystyle.css">
+<!-- /* 		font-family: 'Bevan', cursive; */ -->
+<!-- /* 		font-family: 'Shrikhand', cursive; */ -->
+	
+	<style>
+	
+	header {
+		height: 200px;
+		line-height: 200px;
+		background: url("../images/shopping.jpg") no-repeat center/cover;
+		
+	}
+	
+	header h1 {
+		font-family: 'Racing Sans One', cursive;
+		font-weight: 400;
+		font-size: 70px;
+		margin-left: 100px;
+	}
+	
+	nav {
+		height: 50px;
+		background-color: orange;	
+		margin-bottom: 15px;
+	}
+	
+	nav li {
+		display: inline;
+	}
+	
+	aside {
+		background-color: pink;
+		width: 20%;
+	}
+	
+	#left {
+		margin-right: 15px; 
+	}
+	
+	aside, section {
+		float: left;
+		margin-bottom: 15px;
+		height: calc(100vh - 340px);
+	}
+	
+	section {
+		box-sizing: border-box;
+		border: 1px solid black;
+		margin-right: 15px;
+		width: calc(100vw - 40% - 30px);
+	}
+	
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+	
+	footer {
+		background-color: skyblue;
+		clear: both;
+		height: 60px;
+	}	
+	
+	a {
+		text-decoration: none;
+	}
+	
+	input {
+		width: 80%;
+	}
+	
+	</style>
+	
+</head>
+<body>
+	
+	<header>
+	<h1><a href="main.html">DDIT SHOP</a></h1>
+	</header>
+	
+	
+	<nav>
+		<ul>
+			<li><a href="main.html">HOME</a></li>
+			<li><a href="main.html">SHOPPING</a></li>
+			<li><a href="main.html">ABOUT</a></li>
+			<li><a href="main.html">NEWS</a></li>
+			<li><a href="main.html">MY ACCOUNT</a></li>
+			<li><a href="main.html">CONTACTS</a></li>
+		</ul>
+	</nav>
+	
+	<aside id="left">
+		<h2>카테고리</h2>
+		<ul>
+			<li><a href="computer.html" target="article">컴퓨터</a></li>
+			<li><a href="clothing.html" target="article">의류</a></li>
+			<li><a href="music.html" target="article">음악</a></li>
+			<li><a href="movie.html" target="article">영화</a></li>
+		</ul>
+	</aside>
+	
+	<section>
+		<iframe src="index.html" name="article"><!-- 아이프레임영역 --></iframe>
+	</section>
+	
+	<aside id = "right">
+		<div>
+			<h3>Shopping Cart</h3>
+			<p>
+				현재 쇼핑카트에 물품이 없습니다.<br>
+				<a href="#" 
+				onclick="window.open('shopcart.html', 'windowPop', 'width=600, height=400, left=400, top=400, resizable = yes')">쇼핑카트 보기</a>
+			</p>
+		</div>
+		
+		<div id="login">
+			<h4>Log In</h4>
+			<form>
+				아이디<br>
+				<input type="text" name="userId" title="사용자아이디"><br>
+				비밀번호<br>
+				<input type="password" name="userPw" title="사용자비밀번호"><br>
+				<button type="submit">로그인</button>
+				<button type="reset">초기화</button><br>
+			</form>
+			<a href="register.html" target="_blank">회원가입</a>
+			<a href="">비밀번호찾기</a>
+		</div>
+		
+		
+	</aside>
+	
+	<footer>
+		<p>2021.03.15	대덕인재개발원 042-1234-5678</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style type="text/css">
+
+        body {
+            text-align: center;
+        }
+
+        div {
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px solid gray;
+            padding: 10px;
+            width: 32%;
+            vertical-align: top;
+            cursor: pointer;
+        }
+
+        img {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<video id="video" src="../media/sample-mp4-file.mp4" width="100%;" controls></video>
+<div onclick="changeMovie('sample-mp4-file.mp4')">
+    <img alt="영화1" src="../images/movie_image.jpeg">
+    <p>영화1</p>
+</div>
+
+<div onclick="changeMovie('sample-mp4-file.mp4')">
+    <img alt="영화2" src="../images/movie_image.jpeg">
+    <p>영화2</p>
+</div>
+
+<div onclick="changeMovie('sample-mp4-file.mp4')">
+    <img alt="영화3" src="../images/movie_image.jpeg">
+    <p>영화3</p>
+</div>
+
+<script>
+    function changeMovie(fileName) {
+        var video = document.getElementById('video');
+        video.src = '../media/' + fileName;
+    }
+</script>
+</body>
+</html>
