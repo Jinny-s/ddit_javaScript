@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>취미 고르기</title>
+</head>
+<body>
+	<form>
+		이 름 : <input type="text" name="userName" id="userName" required><br><br>
+		
+		성 별 :
+		<input type="radio" name="gender" id="genderMale" value="남자" required>
+		<label for="genderMale">남</label>
+		<input type="radio" name="gender" id="genderFemale" value="여자" required>
+		<label for="genderFemale">여</label><br><br>
+		
+		취 미 :
+		<input type="checkbox" name="hobby" id="hobbyTrip" value="여행">
+		<label for="hobbyTrip">여행</label>		
+		<input type="checkbox" name="hobby" id="hobbyBook" value="독서">
+		<label for="hobbyBook">독서</label>		
+		<input type="checkbox" name="hobby" id="hobbyFilm" value="영화감상">
+		<label for="hobbyFilm">영화감상</label>		
+		<input type="checkbox" name="hobby" id="hobbyMusic" value="음악감상">
+		<label for="hobbyMusic">음악감상</label>		
+		<input type="checkbox" name="hobby" id="hobbyBike" value="자전거">
+		<label for="hobbyBike">자전거</label>		
+		<input type="checkbox" name="hobby" id="hobbyHiking" value="등산">
+		<label for="hobbyHiking">등산</label>		
+		<input type="checkbox" name="hobby" id="hobbyFishing" value="낚시">
+		<label for="hobbyFishing">낚시</label>
+		<br><br>
+		<button type="button" onclick="userInfo()">결과출력</button><br><br>
+		<textarea rows="10" style="width:500px;" id="result"></textarea>	
+	</form>
+	
+	<script type="text/javascript">
+		function userInfo() {
+			// 정보 가져오기
+			var name = document.getElementById("userName").value;
+			var gender = document.querySelector("input[name='gender']:checked").value;
+			var hobby = document.querySelectorAll("input[name='hobby']:checked");
+			var hobbies = "";
+			
+			// 취미 정리
+			if (hobby.length == 0) {
+				hobbies = "없군요!";
+			} else {
+				for(var i = 0; i < hobby.length; i++) {
+					hobbies += hobby[i].value;
+					if (i == hobby.length - 1) { 
+						hobbies += "이군요!";	
+						continue;
+					}
+					hobbies += ", ";
+				}
+			}
+			
+			// 결과 출력
+			var result = document.getElementById("result");
+			result.innerHTML = name + "씨!\n당신은 " + gender + "이고,\n취미는 " + hobbies;
+		}
+	</script>
+</body>
+</html>

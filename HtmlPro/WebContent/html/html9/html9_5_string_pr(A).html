@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/* 주민등록번호를 입력 받아 생년월일과 성별을 출력한다. */
+		//substring, substr
+		
+		function proc() {
+			var regNo = document.getElementById("jumin").value;
+			
+			var year = regNo.substring(0, 2);
+			var month = regNo.substring(2, 4);
+			var day = regNo.substring(4, 6);
+			var genderNo = regNo.substr(7, 1);
+
+			if (genderNo == 1 || genderNo == 2) {
+				year = "19" + year;
+			} else year = "20" + year;
+			
+			if (genderNo == 1 || genderNo == 3) {
+				var gender = "남성";
+			} else gender = "여성";
+			
+			document.getElementById("birth").innerHTML = year + "년 " + month + "월 " + day + "일";
+			document.getElementById("spYear").innerHTML = year;
+			document.getElementById("spMonth").innerHTML = month;
+			document.getElementById("spDay").innerHTML = day;
+			document.getElementById("spGender").innerHTML = gender;
+			
+		}
+		
+	</script>
+</head>
+<body>
+	주민등록번호 : <input type="text" id="jumin">
+	<button type="button" onclick="proc()">확인</button>
+	<hr>
+	생일: <span id="birth"></span><br>
+	연도 : <span id="spYear"></span><br>
+	월 : <span id="spMonth"></span><br>
+	일: <span id="spDay"></span><br>
+	성별: <span id="spGender"></span><br>
+	<hr>
+	<h3>주민등록번호 유효성 검사</h3>
+	주민등록번호 : <input type="text" id="jumin2">
+	<button type="button" onclick="proc2()">확인</button><br>
+	결과 : <span id="check"></span>
+	<script type="text/javascript">
+		function proc2() {
+			var jumin2 = document.getElementById("jumin2").value;
+			var arrReg = [];
+			var check = [2,3,4,5,6,7,8,9,2,3,4,5];
+			var sum = 0;
+			var reg1, reg2;
+			
+			// '-' 하이픈 입력 유무 확인
+			if (jumin2.substr(6, 1) == "-") {
+				reg1 = jumin2.substr(0, 6);
+				reg2 = jumin2.substr(7, 7);
+			} else {
+				reg1 = jumin2.substr(0, 6)
+				reg2 = jumin2.substr(6, 7)
+			}
+			
+			// 주민등록번호 배열에 삽입
+			var reg = reg1 + "" + reg2;
+			
+			for(var i = 0; i < 13 ; i++) {
+				arrReg[i] = reg.substr(i, 1);
+			}
+			console.log(arrReg);
+			
+			// 유효성 검사식
+			for(var i = 0; i < 12; i++) {
+				sum += (arrReg[i] * check[i]); 
+			}
+			console.log(sum);
+			
+			sum = 11 - (sum % 11)
+			console.log(sum);
+			
+			if (0 <= sum && sum < 10) {
+				result = sum;
+			} else if (result == 10) {
+				result = 0;
+			} else if(result == 11) {
+				result = 1;
+			} else {
+				document.getElementById("check").innerHTML = "오류발생";
+			}
+			console.log(result);
+			
+			// 결과 출력
+			if (result == arrReg[12]) {
+				document.getElementById("check").innerHTML = "올바른 주민등록번호입니다.";
+			} else document.getElementById("check").innerHTML = "올바르지 않은 주민등록번호입니다.";
+		}
+	</script>
+</body>

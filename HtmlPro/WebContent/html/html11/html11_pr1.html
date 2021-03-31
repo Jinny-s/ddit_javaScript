@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>File Reader</title>
+	<style type="text/css">
+		.header {
+			height: 55px;
+			background-color: #e7e7e7;
+			display: table-cell;
+			vertical-align: middle;
+			width: 600px;
+		}
+		
+		#attachFile {
+			margin-left: 20px;
+			width: 400px;
+		}
+		
+		#readFile, #reset {
+			border: none;
+			border-radius: 20px;
+			width: 70px;
+			height: 25px;
+			background-color: #2f33ff;
+			color: #ffffff;
+		}
+		
+		#readFile:hover {
+			background-color: #bbd8cf;
+			color: #000000;
+		}
+		
+		.print, .info {
+			background-color: #e7e7e7;
+			text-align: center;
+			width: 600px;
+		}
+		
+		#printFile, #printInfo, #viewImage {
+			width: 570px;
+			margin: 10px;
+		}
+		
+		#printInfo {
+			border: 2px dashed #ff8e5a;
+		}
+	
+	</style>
+</head>
+<body>
+	<div style="margin:0 auto;width: 600px">
+		<div class="header">
+			<input id="attachFile" type="file"></input>
+			<button id="readFile" type="button" onclick="readFile()">읽기</button>
+		</div>
+		
+		<div class="print">
+			<h1>결과 출력(FileReader객체)</h1>
+			<p>이미지파일일 경우에는 DataURL 형식, 아닌 경우 Text 형식</p>
+			<textarea rows="20" id="printFile"></textarea>
+		</div>
+		
+		<div class="info">
+			<h1>파일 정보(File객체)</h1>
+			<p>
+				이미지 파일을 읽은 경우에 이미지가 표시된다.<br>
+				다른 파일을 읽었을 경우 이미지가 표시되지 않는다.
+			</p>
+			<div id="viewImage">
+				<img id="img" src="">
+			</div>
+			<textarea id="printInfo" rows="" cols="" readonly>
+			</textarea>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	
+		function readFile() {
+		var content = document.getElementById("printFile");
+		var imgArea = document.getElementById("viewImage");
+		var files = document.getElementById("attachFile").files;
+		var file = files[0];
+		
+		if(files.length < 1) {
+			alert("선택된 파일이 없습니다.");
+			return;
+		}
+		
+		// 파일 정보 출력
+		var str = "";
+		str += "파일명 : " + file.name + "\n";
+		str += "파일크기 : " + file.size + "\n";
+		str += "파일종류 : " + file.type + "\n";
+		str += "변경날짜 : " + file.lastModifiedDate + "\n";
+		
+		var info = document.getElementById("printInfo");
+		
+		document.getElementById("printInfo").innerHTML = str;
+		
+		// 정보 출력 후 textarea 높이 자동 조절
+		info.style.height = "1px";
+		info.style.height = (12+info.scrollHeight)+"px";
+		
+		// 파일 내용 출력
+		var reader = new FileReader();
+		var type = file.type.split("/")[0];
+		
+		if (type == "image") {
+			reader.readAsDataURL(file);
+			
+			reader.onload = function () {
+				document.getElementById("printFile").innerHTML = "";
+				var img = document.getElementById("img");
+				img.src = reader.result;
+				img.width = 570;
+				img.style.display = "inline";
+				
+			}
+		} else if (type == "text") {
+			reader.readAsText(file);
+			reader.onload = function() {
+				var img = document.getElementById("img");
+				img.style.display = "none";
+				document.getElementById("printFile").innerHTML = reader.result;
+			}
+			
+		} else {
+			alert("출력 오류 발생!");
+		}
+	}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

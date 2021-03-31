@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>객체 교환</title>
+	<style>
+		select {
+			width: 200px;
+			height: 300px;
+		}
+		
+		div {
+			width: 210px;
+			height: 310px;
+		}
+		
+		h1, form{
+			text-align: center;
+		}
+		
+		div button {
+			width: 50px;
+			margin: 25px 15px;
+		}
+	</style>
+	
+	
+</head>
+<body>
+	<h1>select 객체 예제</h1>
+	
+	<div style="float:left;">
+		<select id="left" name="left" size="20" multiple>
+		</select>
+	</div>	
+		
+	<div style="float:left;">
+		<button type="button" onclick="moveRight()"> > </button><br>
+		<button type="button" onclick="moveRightAll()"> >> </button><br>
+		<button type="button" onclick="moveLeft()"> < </button><br>
+		<button type="button" onclick="moveLeftAll()"> << </button><br>
+	</div>
+	
+	<div style="float:right">
+		<select id="right" name="right" size="20" multiple>
+		</select>
+	</div>
+	
+	<form style="clear: both;">
+		<input type="text" id="addNum" required>
+		<button type="button" onclick="addData()">추가하기</button>
+	</form>	
+	
+	<script type="text/javascript">
+		var left = document.getElementById("left");
+		var right = document.getElementById("right");
+		
+// 		function enter() {
+// 			if(event.keyCode == 13) addData();
+// 		}
+		
+		// 숫자 추가 (default: 왼쪽 select에 추가)
+		function addData() {
+			var num = document.getElementById("addNum").value;
+			var nums = document.getElementsByTagName("option");
+			console.log(nums);
+			
+			// 입력한 숫자와 option의 값 비교 (중복 체크)
+		
+			for(i = 0; i < nums.length; i++) {
+				if(num == nums[i].value) {
+					alert("중복된 값입니다. 다시 입력해주세요!");
+					document.getElementById("addNum").value = "";
+					return;
+				}
+			}
+			
+			if (num == null || num == "") {
+				alert("숫자를 입력하세요");
+			} else {
+				var numBox = document.createElement("option");
+				numBox.text = num;
+				numBox.value = num;
+				
+				document.getElementById("left").appendChild(numBox);
+				document.getElementById("addNum").value = "";
+			}
+		}
+		
+		
+		
+		// 숫자 이동(왼->오)
+		// 한 개만 이동할 때
+// 		function moveRight() {
+// 			var selectedNum = left.querySelector("option:checked");
+// 			right.appendChild(selectedNum);
+// 		}
+		
+		//multiple 적용
+		function moveRight() {
+			var selectedNums = left.querySelectorAll("option:checked");
+			for (var i = 0; i < selectedNums.length; i++) {
+				right.appendChild(selectedNums[i]);
+			}
+		}
+		
+		// 전체 숫자 이동(왼->오)
+		function moveRightAll() {
+			var selectedNums = left.querySelectorAll("option");
+			for (var i = 0; i < selectedNums.length; i++) {
+				right.appendChild(selectedNums[i]);
+			}
+		}
+		
+		// 숫자 이동(오->왼)
+		function moveLeft() {
+			var selectedNums = right.querySelectorAll("option:checked");
+			for (var i = 0; i < selectedNums.length; i++) {
+				left.appendChild(selectedNums[i]);
+			}
+		}
+		
+		// 전체 숫자 이동(오->왼)
+		function moveLeftAll() {
+			var selectedNums = right.querySelectorAll("option");
+			for (var i = 0; i < selectedNums.length; i++) {
+				left.appendChild(selectedNums[i]);
+			}
+		}
+
+		// (백업용)
+		//	var selectNum = left.options.selectedIndex; //list를 index값으로 불러옴
+		//	console.log("선택인덱스 : " + selectNum);
+		
+		// 선택한 값 이동
+		//	var numBox = document.createElement("option");
+		//	numBox.text = left[selectNum].value;
+		//	numBox.value = left[selectNum].value;
+		//	console.log("선택값 : " + left[selectNum].value);
+	</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<input type="text" id="target" name="userName">
+		<button type="button" onclick="proc()">제출</button>
+		
+		<div>무궁화 꽃이 피었습니다.</div>
+		<button type="button" onclick="get()">내용 가져오기</button>
+		<button type="button" onclick="set('예이이이')">내용 바꾸기</button>
+		
+		<hr>
+		
+		<img id="image1" alt="고양이" src="../../images/cat2.jpg" width="300">
+		<button type="button" onclick="changeImage()">이미지 변경</button>
+		
+		<hr>
+		
+		<p id="p1" style="border: 1px solid red;">가나다라마바사아자차카타파하</p>
+		<button type="button" onclick="changeStyle()">스타일 변경</button>
+		
+		<hr>
+		<img id="img1" alt="펭수" src="../../images/peng.jpg" width="300" onclick="changeImage2()">
+		
+		
+		
+	</form>
+	<script type="text/javascript">
+	function proc() {
+		var obj = document.getElementById("target");
+		
+		alert(obj);
+		alert(obj.value);
+		
+	}
+	
+	function get() {
+// 		document.getElementsByTagName("div"); 	 // 배열로 반환
+		var obj = document.getElementsByTagName("div")[0]; // div
+		alert(obj.innerHTML);
+	}
+	
+	function set(param) {
+		document.getElementsByTagName("div")[0].innerHTML = param;
+	}
+	
+	function changeImage() {
+		document.getElementById("image1").src = "../../images/cat1.jpg";		
+	}
+	
+	function changeStyle() {
+		document.getElementById("p1").style.border = "1px dotted blue";
+		document.getElementById("p1").style.color = "orange";
+		document.getElementById("p1").style.fontStyle = "italic";
+	}
+	
+	function changeImage2() {
+		var orgSrc = document.getElementById("img1").src;
+		
+		var newSrc;
+		if(orgSrc.indexOf("peng") > -1) {
+			// 현재 이미지가 펭수
+			newSrc = "../../images/tiger.jpg";
+		} else {
+			newSrc = "../../images/peng.jpg";
+		}
+		
+		document.getElementById("img1").src = newSrc;
+	}
+	
+	</script>
+</body>
+</html>

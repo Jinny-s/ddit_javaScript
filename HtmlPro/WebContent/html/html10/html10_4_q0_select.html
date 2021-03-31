@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>가위바위보 게임</title>
+	<style type="text/css">
+	
+	h1 {
+		text-align: center;
+	}
+	
+	#left {
+		float: left;
+		width: 50%;
+	}
+	
+	#left p {
+		background-color: yellow;
+	}
+	
+	#right {
+		float: right;
+		width: 50%;
+	}
+	
+	#right p
+	{
+		background-color: pink;	
+	}
+	
+	div p {
+		padding: 10px;
+		font: 20px bold;
+		text-align: center;
+	}
+	
+	img {
+		width: 100%;
+		height: auto;
+	}
+	
+	</style>
+</head>
+<body>
+	<h1>가위바위보 게임</h1>
+	<select id="choose" name="choose">
+		<option value="가위">가위</option>
+		<option value="바위">바위</option>
+		<option value="보">보</option>
+	</select>
+	<button type="button" onclick="rsp()">게임 시작!</button><br><br>
+	<div id="left">
+		<p>COMPUTER</p><br>
+		<img id="com" src="../../images/ba_left.jpg">
+	</div>	
+	<div id="right">
+		<p>USER</p><br>
+		<img id="user" src="../../images/ba_right.jpg">
+	</div>	
+	<hr>	
+	<div>
+		<p id="result"></p>
+	</div>
+	
+	<script type="text/javascript">
+	
+	function setImg(id, imgSrc, alt) {
+		var imgTag = document.getElementById(id);
+		imgTag.src = "../../images/" + imgSrc;
+		imgTag.alt = alt;
+	}
+	
+	function rsp() {
+		
+		var gbb = ["가위", "바위", "보"];
+		var input = document.getElementById("choose").value;
+		console.log(input);
+		var user = "";
+		
+		if (gbb.indexOf(input) >= 0) {
+			user = gbb.indexOf(input);
+		} else {
+			alert("잘못 입력하셨습니다.");
+			return false;
+		}
+
+		var arrUser = ["ga_right.jpg", "ba_right.jpg", "bo_right.jpg"];
+		setImg('user', arrUser[user], gbb[user]);
+		
+		var arrCom = ["ga_left.jpg", "ba_left.jpg", "bo_left.jpg"];
+		var com = Math.floor(Math.random() * 3);
+		setImg('com', arrCom[com], gbb[com]);
+		
+		var result = document.getElementById("result");
+		if (user == com) {
+			result.innerHTML = "비겼습니다!";
+		} else if ((user == 0 && com == 2) || (user == 1 && com == 0) || (user == 2 && com == 1)) {
+			result.innerHTML = "사용자가 승리하였습니다!";
+		} else {
+			result.innerHTML = "사용자가 패배하였습니다!";
+		}
+		
+	}
+	</script>
+</body>
+</html>

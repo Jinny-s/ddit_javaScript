@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>구구단</title>
+</head>
+<body>
+	<form>
+		<input id="num" type="text" style="width: 20px">단
+		<button type="button" onclick="multi()">출력</button><br><br>
+		<textarea id="result" rows="15" cols="15"></textarea>
+	</form>
+	
+	<script type="text/javascript">
+		function multi() {
+			
+			// 몇 단인지 입력 받음
+			var num = document.getElementById("num").value;
+			var result = "";
+			
+			// 입력 받은 단 * 1~9
+			for(var i = 1; i < 10; i++) {
+				result += num + " * " + i + " = " + (num * i) + "\n";
+			}
+	
+			document.getElementById("result").innerHTML = result;
+			
+			// 결과출력
+		}
+	</script>
+</body>
+</html>

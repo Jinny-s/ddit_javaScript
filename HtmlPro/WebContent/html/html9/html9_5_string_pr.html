@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/* 주민등록번호를 입력 받아 생년월일과 성별을 출력한다. */
+		//substring, substr
+		
+		// 주민번호 입력 받기 (prompt or input)
+		var regNo = prompt("주민등록번호를 입력해주세요", "123456-1234567");
+		document.write("입력하신 주민등록번호 : " + regNo + "<br>");
+		
+		// 생년월일(연도, 월, 일)
+		var year = regNo.substring(0, 2);
+		var month = regNo.substring(2, 4);
+		var day = regNo.substring(4, 6);
+		
+		// 성별(성별 : )
+		var genderNo = regNo.substr(7, 1);
+		
+		if (genderNo == 1 || genderNo == 2) {
+			year = "19" + year;
+		} else year = "20" + year;
+		
+		if (genderNo == 1 || genderNo == 3) {
+			var gender = "남성";
+		} else gender = "여성";
+		
+		// 출력
+		document.write("연도 : " + year + "<br>");
+		document.write("월 : " + month + "<br>");
+		document.write("일 : " + day + "<br>");
+		document.write("성별 : " + gender);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

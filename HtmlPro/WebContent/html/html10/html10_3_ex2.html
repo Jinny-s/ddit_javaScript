@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function addImgs() {
+			var arr = document.getElementsByTagName("li");
+			var arrImgSrc=["barista.jpeg", "cat1.jpg", "cat2.jpg", "dynamite.jpg", "peng.jpg"]
+			
+			for(var i = 0; i < arr.length; i++) {
+				// 이미지 요소를 생성
+				var imgObj = document.createElement("img");
+
+				imgObj.alt = "뭐지";
+				imgObj.src = "../../images/" + arrImgSrc[i];
+				imgObj.height = "30";
+				
+				arr[i].appendChild(imgObj); // <li>컴퓨터1</li>
+			}
+		}
+		
+		function addImg(obj, index) {
+			var arrImgs = document.getElementsByTagName("img");
+			for(var i = 0; i < arrImgs.length; i++) {
+				arrImgs[i].remove();
+			}
+			
+			var arrImgSrc=["barista.jpeg", "cat1.jpg", "cat2.jpg", "dynamite.jpg", "peng.jpg"]
+			var objImg = document.createElement("img");
+			
+			objImg.alt = "뭐지";
+			objImg.src = "../../images/" + arrImgSrc[index];
+			objImg.height = "50";
+			obj.appendChild(objImg);
+			
+		}
+	</script>
+</head>
+<body>
+	<button type="button" onclick="addImgs()">실행</button>
+	<br>
+	<ul>
+		<li id="tmp1" onclick="addImg(this, 0)">컴퓨터1</li>
+		<li id="tmp2" onclick="addImg(this, 1)">식품2</li>
+		<li id="tmp3" onclick="addImg(this, 2)">호랑이</li>
+		<li id="tmp4" onclick="addImg(this, 3)">cloud03</li>
+		<li id="tmp5" onclick="addImg(this, 4)">coffee1</li>
+	</ul>         
+	
+	<hr>
+	
+	<div id="target">
+		<p id="p1">첫번째 단락</p>
+		<p id="p2">두번째 단락</p>
+	</div>
+	
+	<button type="button" onclick="removeEle()">삭제</button>
+	<script type="text/javascript">
+	
+		function removeEle() {
+			var parentEle = document.getElementById("target");
+			var childEle = document.getElementById("p1");
+			parentEle.removeChild(childEle);
+			
+		}
+	
+	</script>
+</body>
+</html>

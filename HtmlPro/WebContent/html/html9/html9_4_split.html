@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	var s = "One,Two,Three,Four,Five";
+	var array = s.split(',');
+	for (var i = 0; i < array.length; i++) {
+		document.writeln(i + '-' + array[i] + '<br>');		
+	}
+	
+	var str2 = "이휘로,전윤주,김현슬,박예진,정유진";
+	document.write(str2 + "<br>");
+	
+	var arr2 = str2.split(",");		// split 사용 시 배열로 리턴
+	document.write("split 결과: " + arr2 + "<br>");
+	document.write("split 결과: arr 길이 " + arr2.length + "<br><br>");
+	
+	for (i = 0; i < array.length; i++) {
+		document.write((i + 1) + "번 : " + arr2[i] + "님 안녕<br>");
+	}
+	
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

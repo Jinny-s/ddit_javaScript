@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<h3>회원가입</h3>
+	<form>
+		이름 : <input type="text" id="userName"><br>
+		주소 : <input type="text" id="userAddr"><br>
+		생일 : <input type="date" id="userBirth"><br>
+		아이디(6-8 문자) : <input type="text" id="userId"><br>
+		이메일 : <input type="email" id="userEmail"><br>
+		휴대폰 : <input type="text" id="userHp"><br>
+		<button type="button" onclick="validate()">양식확인</button>
+		<button type="submit" onclick="sendInfo()">제출</button>
+	</form>
+	
+	
+	
+	<script type="text/javascript">
+		
+		var nm = document.getElementById("userName");
+		var addr = document.getElementById("userAddr");
+		var birth = document.getElementById("userBirth");
+		var id = document.getElementById("userId");
+		var email = document.getElementById("userEmail");
+		var hp = document.getElementById("userHp");
+		
+		function validate() {
+			
+			// 이름
+			if(nm.value.trim().length == 0) {
+				alert("이름이 입력되지 않았습니다.");
+				nm.focus();
+				return;
+			} else if (nm.value.length < 2 || nm.value.length > 10) {
+				alert("이름은 2 ~ 8글자 입니다.");
+				nm.focus();
+				return;
+			}
+			
+			// 주소
+			if(addr.value.trim().length == 0) {
+				alert("주소가 입력되지 않았습니다.");
+				addr.focus();
+				return;
+			}
+			
+			// 생일
+			if(birth.value.trim().length == 0) {
+				alert("생일이 입력되지 않았습니다.");
+				birth.focus();
+				return;
+			}
+			
+			// 아이디
+			if(id.value.trim().length == 0) {
+				alert("아이디가 입력되지 않았습니다.");
+				id.focus();
+				return;
+			} else if (id.value.length < 6 || id.value.length > 15) {
+				alert("아이디는 6 ~ 15글자 입니다.");
+				id.focus();
+				return;
+			}
+			
+			// 이메일
+			var regEmail = /^[0-9a-zA-Z][-_.]?[0-9a-zA-Z]*@\w[-_.]?[0-9a-zA-Z]*.[a-zA-Z]{2,3}/
+			
+			if(email.value.trim().length == 0) {
+				alert("이메일이 입력되지 않았습니다.");
+				email.focus();
+				return;
+			}
+			
+			if(email.value.match(regEmail)) {
+				alert("이메일이 정상입니다.");
+			} else {
+				alert("이메일이 오류입니다.");
+				ele.focus();
+			}
+			
+			// 휴대폰
+			var regHp = /\d{3}-?\d{3,4}-?\d{4}/;
+			
+			if(hp.value.trim().length == 0) {
+				alert("휴대폰번호가 입력되지 않았습니다.");
+				hp.focus();
+				return;
+			} 
+			
+			if (hp.value.match(regHp)) {
+				alert("전화번호가 정상입니다.");
+			} else {
+				alert("전화번호가 오류입니다.");
+				ele.focus();
+				return;
+			}
+			
+			
+			// 정규식 체크
+// 			var val = ~;
+// 			val = val.replaceAll("-", "");
+// 			val.length == 10 || 9;
+			
+// 			try {
+// 				parseInt(val);
+// 			} catch(ex) {
+// 				alert(~);
+// 			}
+			
+		}
+		
+// 		function checkEmpty() {
+// 			var ele = document.getElementById("userName");
+// 			if(ele.value.trim().length == 0) {
+// 				alert("이름이 입력되지 않았습니다.")
+// 				ele.focus();
+// 				return;
+// 			}
+// 		}
+		
+// 		function checkLength() {
+// 			var ele = document.getElementById("userId");
+// 			if(ele.value.length < 6 || ele.value.length > 8) {
+// 				alert("아이디는 6 ~ 8글자 입니다.")
+// 				ele.focus();
+// 				return;
+// 			}
+// 		}
+	
+	</script>
+</body>
+</html>

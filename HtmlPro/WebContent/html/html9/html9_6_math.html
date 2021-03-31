@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Number Guess</h3>
+	<p>1부터 100사이의 숫자를 입력하시오.</p>
+	<input type="text" id="no">
+	<button type="button" onclick="guessNumber()">숫자추측</button>
+</body>
+
+<script type="text/javascript">
+	var randomNo = Math.floor(Math.random() * 100) + 1;
+	console.log(randomNo);
+	function guessNumber() {
+		var val = document.getElementById("no").value;
+		
+		if(val == randomNo) {
+			alert(val + " 정답입니다!");
+		} else if(randomNo < val) {
+			alert(val + "보다 작은 수 입니다.");
+		} else if(val < randomNo) {
+			alert(val + "보다 큰 수 입니다.");
+		} else {
+			alert("잘못 입력하셨습니다.\n입력값 : " + val);
+		}
+	}
+</script>
+
+</html>
