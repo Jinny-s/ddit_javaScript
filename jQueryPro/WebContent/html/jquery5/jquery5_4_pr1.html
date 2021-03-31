@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		// 전체선택, 전체해제
+		$("#chkAll").click(function(){
+			if($(this).prop("checked")) {
+				$(":checkbox").prop("checked", true);
+			} else {
+				$(":checkbox").prop("checked", false);
+			}
+		});
+		
+		// 체크박스가 전부 선택되었을때 '전체선택'
+		$(":checkbox").not("#chkAll").click(function(){
+		var chkedBox = $(":checkbox:checked").not("#chkAll").length;
+			if(chkedBox == 5) {
+				$("#chkAll").prop("checked", true);
+			} else {
+				$("#chkAll").prop("checked", false);
+			}
+		});
+	});
+	
+	</script>
+</head>
+<body>
+	<h4>체크박스 전체선택/해제</h4>
+	<form>
+		<input id="chkAll" type="checkbox">
+		<label for="chkAll">전체선택</label>
+		
+		<input id="one" type="checkbox">
+		<label for="one">1</label>
+		<input id="two" type="checkbox">
+		<label for="two">2</label>
+		<input id="three" type="checkbox">
+		<label for="three">3</label>
+		<input id="four" type="checkbox">
+		<label for="four">4</label>
+		<input id="five" type="checkbox">
+		<label for="five">5</label>
+	</form>
+</body>
+</html>

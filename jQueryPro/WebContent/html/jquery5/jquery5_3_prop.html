@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#chkProp").click(function(){
+			$("#chkBox").prop("checked", true);
+			$("#genderFemale").prop("checked", true);
+			$("#listBox").val("2").prop("selected", true);
+			$("#readOnly").prop("readonly", true);
+			$("#disabled").prop("disabled", true);
+		});
+		
+		$("#chkAll").click(function(){
+			if($(this).prop("checked")) {
+				$(":checkbox", "#area2").attr("checked", false).each(function(){
+					$(this).prop("checked", true);
+				});
+			} else {
+				$(":checkbox", "#area2").attr("checked", true).each(function(){
+					$(this).prop("checked", false);
+				});
+			}
+		});
+		
+		
+		
+	});
+	
+	
+	</script>
+</head>
+<body>
+	<form>
+		<label for="chkBox">체크박스</label>
+		<input id="chkBox" type="checkbox">
+		<br><br>
+		
+		라디오
+		<label for="genderMale">남자</label>
+		<input id="genderMale" type="radio" name="gender">
+		<label for="genderFemale">여자</label>
+		<input id="genderFemale" type="radio" name="gender">
+		<br><br>
+
+		리스트박스
+		<select id="listBox">
+			<option value="1">가가가가가</option>
+			<option value="2">나나나나나</option>
+			<option value="3">다다다다다</option>
+		</select>
+		<br><br>
+		
+		<label for="readOnly">(readonly)</label>
+		<input id="readOnly" type="text" value="가나다">
+		<br><br>
+		
+		(disabled)
+		<button id="disabled" type="button">실행</button>
+		<button id="chkAttr" type="button">attr 확인</button>
+		<button id="chkProp" type="button">prop 확인</button>
+		
+		<hr>
+		
+		<div id="area2">
+			체크박스(전체선택/해제) : <br>
+			<input id="chkAll" type="checkbox">
+			<label for="chkAll">전체선택</label>
+			<input id="one" type="checkbox">
+			<label for="one">1</label>
+			<input id="two" type="checkbox">
+			<label for="two">2</label>
+			<input id="three" type="checkbox">
+			<label for="three">3</label>
+			<input id="four" type="checkbox">
+			<label for="four">4</label>
+			<input id="five" type="checkbox">
+			<label for="five">5</label>
+		</div>
+	</form>
+
+
+</body>
+</html>

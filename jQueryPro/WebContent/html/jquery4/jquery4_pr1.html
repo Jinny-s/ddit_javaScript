@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+	<style type="text/css">
+		#ex1 button {
+			border: none;
+			background-color: blue;
+			color: white;
+			height: 30px;
+			border-radius: 10px;
+		}
+		
+		#ex1 button:hover {
+			background-color: white;
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<h3>예제1</h3>
+	<div id="ex1" style="height:400px;background-color:lightgray;text-align:center;">
+		<button id="bShow" type="button">Show</button>
+		<button id="bHide" type="button">Hide</button>
+		<button id="bSlideUp" type="button">SlideUp</button>
+		<button id="bSlideDown" type="button">SlideDown</button>
+		<button id="bSlideToggle" type="button">SlideToggle</button>
+		<button id="bFadeIn" type="button">FadeIn</button>
+		<button id="bFadeOut" type="button">FadeOut</button>
+		<button id="bFadeTo" type="button">FadeTo</button>
+		<button id="bFadeToggle" type="button">FadeToggle</button>
+		<br><br>
+		<img id="img1" src="../../images/peng1.jpg" style="height:80%;">
+	</div>
+
+	<h3>예제2</h3>
+	<div id="ex2">
+		<ul>
+			<li><a href="../../images/peng2.jpg" id="list1">펭수 1</a></li>
+			<li><a href="../../images/peng3.jpg">펭수 2</a></li>
+			<li><a href="../../images/peng4.jpg">펭수 3</a></li>
+		</ul>
+		<hr>
+		<p><img src="" id="pImg" style="display:none;height:200px;"></p>
+	</div>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#img1").hide();
+		
+		// 예제1
+		$("#bShow","#ex1").click(function(){
+			$("#img1").show();
+		});
+	
+		$("#bHide","#ex1").click(function(){
+			$("#img1").hide();
+		});
+		
+		$("#bSlideUp","#ex1").click(function(){
+			$("#img1").slideUp();
+		});
+		
+		$("#bSlideDown","#ex1").click(function(){
+			$("#img1").slideDown();
+		});
+		
+		$("#bSlideToggle","#ex1").click(function(){
+			$("#img1").slideToggle();
+		});
+		
+		$("#bFadeIn","#ex1").click(function(){
+			$("#img1").fadeIn();
+		});
+		
+		$("#bFadeOut","#ex1").click(function(){
+			$("#img1").fadeOut();
+		});
+		
+		$("#bFadeTo","#ex1").click(function(){
+			$("#img1").fadeTo(2000, 0.5);
+		});
+		
+		$("#bFadeToggle","#ex1").click(function(){
+			$("#img1").fadeToggle();
+		});
+		
+		
+		// 예제2
+		$("li a").click(function(e){
+			e.preventDefault();
+			var originSrc = $(this).attr("href");
+			$("#pImg").fadeOut(function(){
+				$("#pImg").attr("src", originSrc);
+				$("#pImg").fadeIn();
+			});
+		});
+		
+		function callBack(){
+			$("#pImg").attr("src", originSrc);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	});
+	</script>
+</body>
+</html>

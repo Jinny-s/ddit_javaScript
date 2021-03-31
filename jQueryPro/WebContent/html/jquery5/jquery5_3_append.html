@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready({
+		
+		$("p").click(function(){
+			
+			$("p").each(function(){
+				var addObj = $("<img>");
+				$(this).append(addObj);
+				
+			});
+		});u
+	});
+	</script>
+</head>
+<body>
+	<div>
+		<p title="peng1">펭수1</p>
+		<p title="peng2">펭수2</p>
+		<p title="peng3">펭수3</p>
+		<p title="peng4">펭수4</p>
+	</div>
+</body>
+</html>

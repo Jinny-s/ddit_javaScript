@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+</head>
+<body>
+	<p>이 문단에는 <span>스팬</span> 엘리먼트가 있다.</p>
+	<div>
+		이 디비전에도 <span>스팬</span> 엘리먼트가 있다.
+		<p>디비전의 내부 문단의 <span>스팬</span> 엘리먼트이다.</p>
+		<div>
+			<p>내부 디비전의 다시 문단 속 아주 <strong>깊은 곳에</strong>
+			<em>숨어있는</em> <span>스팬</span> 엘리먼트도 있다.</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// span 태그의 배경색
+		$("span").css("background-color","yellow");
+		
+		// div의 모든 후손 중 span의 테두리
+		$("div  span").css("border", "3px solid red");
+		
+		// div의 자식 span태그의 테두리
+		$("div > span").css("border","3px solid blue");
+	});
+</script>
+</html>

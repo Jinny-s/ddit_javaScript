@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+</head>
+<body>
+	<h1 onclick="alert(1)";>JQUERY 이벤트</h1>
+	<p>이벤트를 넣어줄게요</p>
+	<p>이벤트를 넣어줄게</p>
+	<p>이벤트를 넣어줄</p>
+	<p>이벤트를 넣어</p>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("p").click(function(){
+		alert("클릭했습니다.");
+	});
+	
+	$('p').on({
+		mouseover: function(){
+			// 배경색 바꾸기
+// 			$("p").css("background-color","yellow"); => p요소 전체
+			$(this).css("background-color","yellow");
+		}
+		, mouseout : function(){
+// 			$("p").css("background-color","");
+			$(this).css("background-color","");
+		}
+	});
+});
+	
+</script>
+</html>

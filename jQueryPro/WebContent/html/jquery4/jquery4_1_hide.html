@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		div {
+			border: 3px dotted red;
+		}
+	</style>
+	<script src="../../js/jquery.js"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#btnFadeIn").click(function() {
+// 			$("p").hide();
+// 			$("p").fadeIn();
+			$("p").slideDown();
+		});
+		
+		$("#btnFadeOut").click(function() {
+// 			$("p").show();
+// 			$("p").fadeOut();
+			$("p").slideUp();
+		});
+		
+		$("#btnFadeToggle").click(function() {
+// 			$("div").toggle();
+// 			$("div").fadeToggle();
+			$("div").slideToggle();
+		});
+		
+// 		$("#btnFadeTo").click(function() {
+// 			$("div").fadeTo(2000, 0.3);
+// 		});
+		
+	});
+	</script>
+</head>
+<body>
+	<p>이 영역은 버튼을 누르면 사라졌다가 다시 나타납니다.</p>
+<!-- 	<button id="btnHide" type="button">Hide</button> -->
+<!-- 	<button id="btnShow" type="button">Show</button> -->
+	<button id="btnFadeIn" type="button">Fade In</button>
+	<button id="btnFadeOut" type="button">Fade Out</button>
+	
+	<br><br>
+	
+<!-- 	<button id="btnToggle" type="button">Toggle</button> -->
+	<button id="btnFadeToggle" type="button">Fade Toggle</button>
+	<button id="btnFadeTo" type="button">Fade To</button>
+	<div>
+		Hello!<br>
+		Bye:)
+	</div>
+</body>
+</html>

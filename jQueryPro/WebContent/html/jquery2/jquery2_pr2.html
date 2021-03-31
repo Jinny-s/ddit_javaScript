@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+	<style type="text/css">
+		label {
+			display: inline-block;
+			width: 90px;
+		}
+		
+		#start {
+			border-radius: 15px;
+			border: none;
+			width: 120px;
+			height: 30px;
+			background-color: #deaaff;
+		}
+		
+		#start:hover {
+			background-color: #0f6ba4;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<button id="start">jQuery 실행</button>
+	<hr>
+	<br>
+	<form>
+		<div>
+			<label for="text">Text : </label>
+			<input type="text" id="text">
+		</div><br>
+		
+		<div>
+			<label for="pw">Password : </label>
+			<input type="password" id="pw">
+		</div><br>
+		
+		<div>
+			<label for="radioA">Radio : </label>
+			<input type="radio" name="radioButton" id="radioA" value="A">A
+			<input type="radio" name="radioButton" id="radioB" value="B">B
+		</div><br>
+		
+		<div>
+			<label for="check1">Checkbox : </label>
+			<input type="checkBox" name="checkBoxes" id="check1" value="1">1
+			<input type="checkBox" name="checkBoxes" id="check2" value="2">2
+		</div><br>
+		
+		<div>
+			<label for="textArea">Textarea : </label>
+			<br>
+			<textarea id="textArea" rows="8" cols="50"></textarea>
+		</div><br>
+		
+		<div>
+			Image : <input type="image" src="../../images/peng.jpg" style="width:100px;">
+		</div><br>
+		
+		<div>
+			File : <input type="file">
+		</div><br>
+		
+		<div>
+			Buttons : 
+			<button type="button">Normal</button>
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button>
+		</div><br>
+		
+		<div>
+			<input type="button" value="일반버튼" id="normalButton">
+			<input type="submit" value="전송버튼" id="submitButton">
+			<input type="reset" value="초기화버튼" id="resetButton">
+		</div>
+	</form>	
+</body>
+<script type="text/javascript">
+	
+	$("#start").click(function(){
+		
+		// input 요소 테두리 lime, 배경색 핑크 (form 선택자)
+		$(":input").css("border-color","lime").css("background-color","pink");
+		
+		// Button 요소와 input type이 button 인 요소 배경색 하늘색(form 선택자)
+		$(":button").css("background-color","skyblue");
+		
+		// input type이 button인 요소 배경색 검정, 글자색 흰색
+		$("input[type='button']").css("background-color","black").css("color","white");
+		
+		// Type이 submit 요소의 배경색 녹색 (form 선택자)
+		$(":submit").css("background-color","green");
+		
+		// Type이 reset인 요소의 배경색 노랑 (form 선택자)
+		$(":reset").css("background-color","yellow");
+		
+		// Type이 text, password 인 요소의 테두리 파랑 (form 선택자)
+		$(":text,:password").css("border-color","blue");
+		
+		// Type이 file, image인 요소의 테두리 빨강 (form 선택자)
+		$(":file,:image").css("border","2px solid red");
+	});
+</script>
+</html>

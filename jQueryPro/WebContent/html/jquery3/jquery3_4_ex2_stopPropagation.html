@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		// button 클릭 시, 버튼의 테두리 설정
+		$("button").click(function(){
+			$(this).css("border","3px solid blue");
+			return false;
+		});
+		// span 클릭 시, span의 테두리 설정
+		$("span").click(function(){
+			$(this).css("border", "3px solid red");
+			return false;
+		});
+		// div 클릭 시, div의 테두리 설정. div안에 "Hello~" 글자 추가
+		$("div").click(function(){
+			$(this).css("border", "3px solid orange").append("Hello~");
+			
+			// 방법 1) p 태그를 만들어서 추가하기
+			// $("<p>Hello~</p>").appendTo(this);
+			
+			// 방법 2) 텍스트 노드 추가하기
+			// var node = document.createTextNode("헬로우");
+			//$(this).append(node);
+			
+			
+		});
+		// a 클릭 시, 프롬프트로 태어난 년도 4자리를 입력 받아서 20세 이상인 경우만 링크 이동
+		$("a").click(function(e){
+			var birth = prompt("태어난 년도 4자리를 입력해주세요. (숫자만 가능)");
+			var today = (new Date()).getFullYear();
+			
+			if(birth == null) {
+				alert("입력된 값이 없습니다.");
+				return false;
+			} 
+			
+			if((today - birth) < 19) {
+				e.preventDefault();
+				alert("20세 미만은 이용할 수 없습니다.");
+			}
+		});
+	});
+	</script>
+</head>
+<body>
+	<div style="width:300px;height:200px;background-color: pink;">
+		<span style="width:100px;height:100px;background-color: yellow;display:inline-block;">
+			<button type="button" style="margin:auto;">클릭하세요</button>
+		</span>
+	</div>
+	<br>
+	<hr color="red">
+	<br>
+	<a href="https://www.daum.net" target="_blank">Daum으로 이동</a>
+</body>
+</html>
