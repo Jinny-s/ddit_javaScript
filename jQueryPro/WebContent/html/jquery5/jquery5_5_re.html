@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+	<style type="text/css">
+		img {
+			width: 150px;
+			height: 100px;
+		}
+	
+	</style>	
+	<script type="text/javascript">
+	
+	var imgRoot = "../../images/";
+	$(document).ready(function(){
+		$("p").click(function(){
+			var fileName = $(this).children().attr("value");
+			var strAlt = $(this).text();
+			
+			// 방법1)
+// 			var img = $("<img>");
+// 			img.attr("src", "../../images/" + fileName);
+// 			$(this).append(img);
+			
+			// 방법2)
+			var img = $("<img>", {
+						"src" : imgRoot + fileName
+						,"alt" : strAlt
+						});
+			$(this).append(img);
+		});
+	});
+		
+	</script>
+</head>
+<body>
+	<div>
+		<p id="pp">펭수1<input type="hidden" value="peng1.jpg"></p>
+		<p>펭수2<input type="hidden" value="peng2.jpg"></p>
+		<p>펭수3<input type="hidden" value="peng3.jpg"></p>
+		<p>펭수4<input type="hidden" value="peng4.jpg"></p>
+	</div>
+</body>
+</html>

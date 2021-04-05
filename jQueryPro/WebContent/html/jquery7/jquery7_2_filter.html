@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function(){
+			
+			// 첫번째 li에 노란색 넣기
+			$("li").first().css("background-color","yellow");
+			
+			// 각 리스트의 첫번째 li에 빨간색 테두리 넣기
+	// 		$("li:first-child").css("border","3px solid red");
+			$("ol li:first-child").css("border","3px solid red");
+			
+			// 마지막 li에 초록색 배경 넣기
+			$("li").last().css("background-color","green");
+			
+			// 각 리스트의 마지막 li에 파란색 점선 테두리 넣기
+			$("li:last-child").css("border","3px dotted blue");
+			
+		});
+	});
+	</script>
+</head>
+<body>
+	<button type="button">얍</button><br>
+	<p>가나다라마바사아</p>
+	<ol>
+		<li>가</li>
+		<li>나</li>
+		<li>다</li>
+		<li>라</li>
+	</ol>
+	
+	<p>ABCDEFG</p>
+	<ol>
+		<li>A</li>
+		<li>B</li>
+		<li>C</li>
+		<li>D</li>
+	</ol>
+</body>
+</html>

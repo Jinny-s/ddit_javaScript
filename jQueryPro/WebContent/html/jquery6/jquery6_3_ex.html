@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("p").click(function(){
+			// parent
+			if($(this).parent().is("div")) {
+				var pCopy = $(this).clone().css("color","red");
+				$(this).parent().append(pCopy);
+				$(this).parent().css("border", "3px dotted orange");
+			} else {
+				alert("작업대상이 아닙니다.");
+			}
+			// is
+		});
+	});
+	
+	</script>
+</head>
+<body>
+	<div>
+		<p>무궁화 꽃이 피었습니다</p>
+	</div>
+
+	<p>윤주는 예쁘당</p>
+
+	<div>
+		<p>사뿐이 즈려밝고 가시옵소서</p>
+	</div>
+</body>
+</html>

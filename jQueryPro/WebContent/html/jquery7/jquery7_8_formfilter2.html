@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			
+// 			내가 한 풀이 >>>>>>>>>
+
+// 			var obj = "";
+// 			$(":checked").each(function(idx){
+// 				var str = $(this).next().text();
+// 				if(idx != 0) {
+// 					obj += ", ";
+// 				}
+// 				obj += str;
+// 			});
+// 			alert(obj);
+// 			$("span").text(obj);
+			
+			
+			// 체크박스 id와 라벨의 for가 연결되어있음을 이용
+			var obj = "";
+			$(":checked").each(function(idx){
+				var val = "";
+				var tmpId = $(this).attr("id");
+				var str = $("label[for=" + tmpId + "]").text();
+				if(idx != 0) obj += ", ";
+				obj += str;
+			});
+			alert(obj);
+			$("span").text(obj);
+		});
+	});
+	
+	</script>
+</head>
+<body>
+	<form>
+		취 미 :
+		<input id="trip" type="checkbox"><label for="trip">여행</label>
+		<input id="chess" type="checkbox"><label for="chess">장기</label>
+		<input id="go" type="checkbox"><label for="go">바둑</label>
+		<input id="book" type="checkbox"><label for="book">독서</label>
+		<input id="fishing" type="checkbox"><label for="fishing">낚시</label>
+		
+		<br><br>
+		
+		<button type="button">전송</button>
+		
+		<br><br>
+		
+		<p>선택 결과 : <span></span></p>
+	</form>
+</body>
+</html>

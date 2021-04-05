@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		td {
+			width: 150px;
+			text-align: center;
+		}
+	</style>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#runQ").click(function(){
+			
+			// 메서드 형태 권장★★★
+// 			$("li:first, li:last").css("background-color", "yellow");
+			$("li").first().css("background-color", "yellow");
+			$("li").last().css("background-color", "yellow");
+			
+// 			$("li:eq(5)").css("background-color", "red");
+			$("li").eq(5).css("background-color", "red");
+			
+// 			$("li:lt(4)").css("font-weight", "bold");
+			$("li").slice(0, 4).css("font-weight", "bold");
+			
+// 			$("li:gt(3)").css("font-size","0.5em");
+			$("li").slice(4).css("font-size","0.5em");
+			
+			$("tr:even()").css("background-color", "lightgrey");
+			$("tr:odd()").css("background-color", "lightpink");
+			$("tr").first().css("background-color","black").css("color","white");
+			
+		});
+	});
+	</script>
+</head>
+<body>
+	<button id="runQ" type="button">jQuery 실행</button>
+	<br>
+	<ul>
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+		<li>five</li>
+		<li>six</li>
+		<li>seven</li>
+		<li>eight</li>
+		<li>nine</li>
+	</ul>
+	<table>
+		<tr>
+			<td>one</td>
+			<td>62만원</td>
+		</tr>
+		<tr>
+			<td>two</td>
+			<td>45만원</td>
+		</tr>
+		<tr>
+			<td>three</td>
+			<td>33만원</td>
+		</tr>
+		<tr>
+			<td>four</td>
+			<td>72만원</td>
+		</tr>
+		<tr>
+			<td>five</td>
+			<td>77만원</td>
+		</tr>
+		<tr>
+			<td>six</td>
+			<td>54만원</td>
+		</tr>
+		<tr>
+			<td>seven</td>
+			<td>61만원</td>
+		</tr>
+		<tr>
+			<td>eight</td>
+			<td>52만원</td>
+		</tr>
+		<tr>
+			<td>nine</td>
+			<td>88만원</td>
+		</tr>
+	</table>
+</body>
+</html>

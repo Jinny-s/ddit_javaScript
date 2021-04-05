@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+	<style type="text/css">
+		img {
+			width: 150px;
+			height: 100px;
+		}
+	
+	</style>	
+	<script type="text/javascript">
+	
+	var imgRoot = "../../images/";
+	$(document).ready(function(){
+		$("p").click(function(){
+			var fileName = $(this).attr("title");
+			var strAlt = $(this).text();
+			
+			// 방법1)
+// 			var img = $("<img>");
+// 			img.attr("src", "../../images/" + fileName);
+// 			$(this).append(img);
+			
+			// 방법2)
+			var img = $("<img>", {
+						"src" : imgRoot + fileName
+						,"alt" : strAlt
+						});
+			$(this).append(img);
+			
+			
+			
+		});
+	});
+		
+	</script>
+</head>
+<body>
+	<div>
+		<p title="peng1.jpg">펭수1</p>
+		<p title="peng2.jpg">펭수2</p>
+		<p title="peng3.jpg">펭수3</p>
+		<p title="peng4.jpg">펭수4</p>
+		<!-- title이 쓰기 싫을 때 p 아래에 input으로 넣기
+		<input type="hiddle" value="peng4.jpg"> 이런식으로 -->
+	</div>
+</body>
+</html>

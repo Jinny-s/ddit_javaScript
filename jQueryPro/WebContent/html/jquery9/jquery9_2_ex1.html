@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../../js/jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#sendAjax").click(function() {
+			
+			$.ajax({
+				url: "intro.html"
+				, type: "get"
+				, success: function(data) {
+					$("#resultAjax").html(data);
+				}
+				, error: function(jqXHR, textStatus, errorThrown) {
+					alert("에러 발생!\n" + textStatus + " : " + errorThrown);
+					$("#resultAjax").html("에러 발생!<br>" + textStatus + " : " + errorThrown);
+				}
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+	<form id="fm" action="" method="get">
+		이름 : <input type="text" name="name"><br>
+		나이 : <input type="text" name="age"><br><br>
+		
+		<input type="button" value="post버튼">
+		<input type="submit" value="get버튼">
+		<hr>
+		<button type="button" id="sendAjax">Ajax전송</button>
+	</form>
+	<span id="resultAjax"></span>
+</body>
+</body>
+</html>

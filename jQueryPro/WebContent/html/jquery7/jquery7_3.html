@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		td {
+			width : 130px;
+			text-align: center;
+		}
+	
+	</style>
+	<script src="../../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			
+			// 0,3,6 ... td 짙은회색
+// 			$("td:nth-child(1)").css("background-color","#4c4c4c");
+// 			$("td:nth-child(3n-2)").css("background-color","#4c4c4c");
+			$("td:nth-child(3n+1)").css("background-color","#4c4c4c");
+			
+			// 1,4,7 ... td 회색
+// 			$("td:nth-child(2)").css("background-color","#999999");
+// 			$("td:nth-child(3n-1)").css("background-color","#999999");
+			$("td:nth-child(3n+2)").css("background-color","#999999");
+			
+			// 2,5,8 ... td 밝은 회식
+// 			$("td:nth-child(3)").css("background-color","#e5e5e5");
+			$("td:nth-child(3n)").css("background-color","#e5e5e5");
+			
+			// 1행 검정 배경 흰 글씨
+// 			$("tr").first().css("background-color","#000000").css("color","#FFFFFF");
+// 			=> tr 위에 td가 올라가있고, td에 색상이 있어서 적용되지 않음
+//			=> 첫번째 tr의 td에 색상을 정용해 주기
+			$("tr:first-child td").css("background-color","#000000").css("color","#FFFFFF");
+		});
+	});
+	
+	</script>
+</head>
+<body>
+	<button type="button">뿅</button>
+	<br><br>
+	
+	<table>
+		<tr>
+			<td>이름</td>
+			<td>주소</td>
+			<td>전화번호</td>
+			<td>이름</td>
+			<td>주소</td>
+			<td>전화번호</td>
+		</tr>
+		
+		<tr>
+			<td>홍길동</td>
+			<td>대전</td>
+			<td>010-1111-2222</td>
+			<td>홍길동</td>
+			<td>대전</td>
+			<td>010-1111-2222</td>
+		</tr>
+		
+		<tr>
+			<td>진달래</td>
+			<td>서울</td>
+			<td>010-2222-1111</td>
+			<td>진달래</td>
+			<td>서울</td>
+			<td>010-2222-1111</td>
+		</tr>
+		
+		<tr>
+			<td>개나리</td>
+			<td>부산</td>
+			<td>010-3333-3333</td>
+			<td>개나리</td>
+			<td>부산</td>
+			<td>010-3333-3333</td>
+		</tr>
+		
+		<tr>
+			<td>무궁화</td>
+			<td>대구</td>
+			<td>010-4444-4444</td>
+			<td>무궁화</td>
+			<td>대구</td>
+			<td>010-4444-4444</td>
+		</tr>
+		
+	</table>
+</body>
+</html>
