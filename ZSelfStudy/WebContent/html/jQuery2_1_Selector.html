@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#start").click(function(){
+			// h2의 자식 a 태그의 스타일에 테두리 설정
+			$("h2 > a").css("border", "2px solid black");
+			
+			// h2의 후손 a 태그의 스타일 배경색을 노란색으로 변경
+			$("h2 a").css("background-color", "yellow");
+			
+			// h2의 손자 a 태그의 글자색을 빨간색으로 변경
+			$("h2 >> a").css("color", "red");
+			
+			//-------------------------------------------------------------
+			
+			// span 태그의 배경색 변경 yellow
+			$("span").css("background-color", "yellow");
+			
+			// div의 모든 후손 중 span 태그의 테두리 - red
+			$("div span").css("border", "3px solid red");
+			
+			// div의 자식 span태그의 테두리 - blue
+			$("div > span").css("border", "3px solid blue");
+			
+		});
+	});
+	</script>
+</head>
+<body>
+	<button id="start" type="button">제이쿼리</button><br><br>
+	
+	<h2>
+		문단 안에 <a>링크</a> 태그가 있다.
+		두번째 <span><a>링크</a></span>는 손자이다.
+	</h2>
+	
+	<p>이 문단에는 <span>스팬</span> 엘리먼트가 있다</p>
+	<div>
+		이 디비젼에도 <span>스팬</span> 엘리먼트가 있다
+		<p>
+			디비젼의 내부 문단의 <span>스팬</span> 엘리먼트이다
+		</p>
+		<div>
+			<p>
+				내부 디비젼의 다시 문단 속 아주 <strong>깊은곳에 </strong>
+				<em> 숨어있는 </em><span>스팬</span> 엘리먼트도 있다
+			</p>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

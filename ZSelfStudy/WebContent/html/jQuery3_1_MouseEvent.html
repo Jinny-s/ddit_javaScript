@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("div").mousedown(function(e){
+			var str = ""
+					+ "type : " + e.type + "\n"
+					+ "target : " + e.target + "\n"
+					+ "pageX : " + e.pageX + "\n"
+					+ "pageY : " + e.pageY + "\n"
+					+ "screenX : " + e.screenX + "\n"
+					+ "screenY : " + e.screenY + "\n"
+					+ "button : " + e.button;
+			alert(str);
+		});
+		
+		$(":button").mousedown(function(e){
+			var str = ""
+				+ "type : " + e.type + "\n"
+				+ "target : " + e.target + "\n"
+				+ "pageX : " + e.pageX + "\n"
+				+ "pageY : " + e.pageY + "\n"
+				+ "screenX : " + e.screenX + "\n"
+				+ "screenY : " + e.screenY + "\n"
+				+ "button : " + e.button;
+		alert(str);
+		});
+	});
+</script>
+</head>
+<body>
+	<div style="width:300px;height:200px;background-color:yellow;"></div>
+	<br>
+	<button type="button">버튼</button>
+</body>
+</html>

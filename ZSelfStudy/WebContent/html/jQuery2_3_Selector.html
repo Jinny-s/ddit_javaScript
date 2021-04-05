@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<style type="text/css">
+		img {
+			width: 60px;
+		}
+		
+		#start {
+			border-radius: 15px;
+			border: none;
+			width: 120px;
+			height: 30px;
+			background-color: #deaaff;
+		}
+		
+		#start:hover {
+			background-color: #0f6ba4;
+			color: white;
+		}
+	</style>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#start").click(function(){
+			// type이 button인 input 요소와 href가 'mailto'로 시작하는 a요소의 배경색 노란색으로 변경
+			$("input[type=button], a[href^=mailto]").css("background-color", "yellow");
+			
+			// href가 'power2c'를 포함하는 모든 a 요소의 밑줄 없음
+			$("a[href*=power2c]").css("text-decoration", "none");
+			
+			// img 요소 중 id 가 'img1'인 것 제외하고 테두리 색 파랑
+			$("img[id!=img1]").css("border", "3px solid blue");
+			
+			// src가 'png'로 끝나는 img 요소의 테두리 색 초록
+			$("img[src$=png]").css("border-color", "green");
+			
+			// alt 속성을 갖는 이미지 요소의 테두리 두께 5px
+			$("img[alt]").css("border", "5px solid black");
+			
+			// title이 'named' 단어를 포함하는 img 요소 두 줄 테두리
+			$("img[title*=named]").css("border-style", "double");
+			
+			// id가 'little'이거나 'little-'로 시작하는 img 요소 점선 테두리
+			$("img[id|=little]").css("border-style", "dotted");
+			
+			// type이 'text'인 input 요소의 테두리 변경
+			$("input[type=text]").css("border", "10px dotted red");
+		});
+	});
+	
+</script>
+</head>
+<body>
+	<button id="start">jQuery 실행</button>
+	<hr>
+	
+	<p><a href="https://www.ddit.or.kr">(재)대덕 인재 개발원</a></p>
+	<p><a href="mailto:power2c@ddit.or.kr">빠워에게 메일보내</a></p>
+	
+	<div>
+		Some images:
+	</div>
+	
+	<div>
+		<img id="img1" alt="peng" src="../images/peng1.jpg">
+		<img id="little" src="../images/peng1.jpg">
+		<img id="little-bear" alt="peng" src="../images/peng1.jpg">
+		<img src="../images/peng1.jpg">
+		<img title="named" alt="peng" src="../images/peng1.jpg">
+		<img src="../images/peng1.jpg">
+		<img src="../images/peng1.png" style="width:120px">
+	</div>
+	
+	<div>
+		이곳은 ID속성이 someDiv인 &lt;div&gt; 태그 입니다.
+	</div>
+	<br>
+	Text:<input id="someDiv" type="text">
+	<br><br>
+	<button type="button">Submit</button>
+	<input type="button" value="Click">
+</body>
+</html>

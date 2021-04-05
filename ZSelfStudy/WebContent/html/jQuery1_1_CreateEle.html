@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("<button type='button' id='start'>이미지추가</button><br>").appendTo("body");
+		
+		$("#start").click(function(){
+			var ele = $("<img>", {
+						"alt" : "펭수"
+						,"src" : "../images/peng1.jpg"
+						,"width" : "300px","height" : "auto"
+						,"click" : function(){
+							$(this).css("border","2px solid red");
+						}
+					});
+			$("body").append(ele);
+		});
+	});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

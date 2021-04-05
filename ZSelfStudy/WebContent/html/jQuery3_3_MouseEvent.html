@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		img {
+			width: 150px;
+			height: 100px;
+		}
+	</style>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("button").css("display", "none");
+		
+		var orgImg;
+		var newImg = ["../images/peng1.jpg", "../images/peng5.jpg", "../images/peng6.jpg"];
+	
+		$("img").mouseover(function(e){
+			orgImg = e.target.src;
+			e.target.src = newImg[$(this).index()];
+		});
+		
+		$("img").mouseout(function(e){
+			e.target.src = orgImg;
+		});
+		
+		$("img").dblclick(function(){
+// 			$(this).css("display", "none");
+			this.style.display = "none";
+			showBtn();
+		});
+		
+		$("button").click(function(){
+			$("img").css("display", "inline");
+			$("button").css("display", "none");
+		});
+		
+		function showBtn(){
+			
+			var cnt = 0;
+			$("img").each(function(idx, item){
+				if($(item).css("display") == "none") cnt++;
+			});
+			
+			if($("img").length == cnt) {
+				$("button").css("display", "inline");
+			}
+		}		
+		
+	});
+</script>
+</head>
+<body>
+	<img src="../images/peng2.jpg" alt="펭수">
+	<img src="../images/peng3.jpg" alt="펭수">
+	<img src="../images/peng4.jpg" alt="펭수"><br>
+	<button type="button">보이기</button>
+</body>
+</html>
